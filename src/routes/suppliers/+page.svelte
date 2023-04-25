@@ -1,8 +1,9 @@
 <script lang="ts">
   import type { PageData } from './$types';
-  export let data: PageData;
   import Breadcrumb from '$lib/components/breadcrumb.svelte';
   import { page } from '$app/stores';
+  export let data: PageData;
+  let { session, suppliers } = data;
 </script>
 
 <div class='grid grid-col-3 gap-4 tems-center'>
@@ -14,19 +15,25 @@
 
 <div>
   <div class="flex justify-center align-middle">
-    {#each data.suppliers as { id, name, type, description }, i}
+    {#each suppliers as { id, created_at, name, description, type, thumbnail }, i}
     <div class="card w-72 bg-base-100 shadow-xl mx-8">
       <a href='/suppliers/{id}'>
-        <figure><img src="/images/suppliers/supplier-1.jpg" alt="supplier" /></figure>
+        {#if thumbnail}
+          <img
+            src={thumbnail}
+            alt={thumbnail ? 'thumbnail' : 'No image'}
+            class="thubnamUrl image"
+          />
+        {:else}
+        <div class="avatar no-image" style="height: 10em; width: 10em;" />
+        {/if}
         <div class="card-body">
           <h2 class="card-title">
             {name}
-            <div class="badge badge-secondary">Recommended</div>
           </h2>
           <p>{description}</p>
           <div class="card-actions justify-end">
-            <div class="badge badge-outline">Metal Cutting</div> 
-            <div class="badge badge-outline">Products</div>
+            <div class="badge badge-outline">{type}</div>
           </div>
         </div>
       </a>

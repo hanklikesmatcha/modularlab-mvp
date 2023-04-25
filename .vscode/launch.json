@@ -5,15 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "node",
+            "name": "Attach to Chrome",
+            "type": "chrome",
             "request": "launch",
-            "name": "Launch Program",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "program": "${workspaceFolder}",
-            "runtimeArgs": ["run", "dev", "--", "--open"],
-            "runtimeExecutable": "npm",
+            "url": "http://localhost:3000"
         }
     ]
 }

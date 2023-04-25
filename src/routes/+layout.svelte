@@ -1,9 +1,22 @@
 <script lang='ts'>
 	import '../app.css';
-    import type { LayoutData } from './$types';
-    export let data: LayoutData;
-</script>
+    import type { LayoutData } from './$types'
+	import { invalidate } from '$app/navigation'
+	import { onMount } from 'svelte'
+	export let data: LayoutData
 
+	$: ({ supabase, session } = data)
+
+	onMount(() => {
+		const { data } = supabase.auth.onAuthStateChange((event, _session) => {
+			if (_session?.expires_at !== session?.expires_at) {
+				invalidate('supabase:auth')
+			}
+		})
+
+		return () => data.subscription.unsubscribe()
+	})
+</script>
 <div class="navbar flex top-0 left-0 right-0 z-50 bg-white shadow-lg border-none">
 	<div class="navbar-start">
 		<div class="dropdown">
@@ -22,11 +35,11 @@
 					/></svg
 				>
 			</label>
+			<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 			<ul
 				tabindex="0"
 				class="menu menu-compact dropdown-content mt-5 p-2 shadow-lg bg-base-100 rounded-box w-52"
 			>
-				<li><a href="/">Home 🏠</a></li>
                 <li><a href="/user">Profile 👤</a></li>
                 <li><a href="/bookings">Bookings 🔍</a></li>
 				<li><a href="/suppliers">Suppliers 🏭</a></li>
