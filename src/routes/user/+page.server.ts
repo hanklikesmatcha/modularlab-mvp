@@ -37,8 +37,7 @@ export const actions = {
 		});
 
 		if (supaBaseError) {
-			return error(500, { message: supaBaseError.message
-			});
+			return error(500, { message: supaBaseError.message });
 		}
 
 		return {

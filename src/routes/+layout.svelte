@@ -1,23 +1,26 @@
-<script lang='ts'>
+<script lang="ts">
 	import '../app.css';
-    import type { LayoutData } from './$types'
-	import { invalidate } from '$app/navigation'
-	import { onMount } from 'svelte'
-	export let data: LayoutData
+	import type { LayoutData } from './$types';
+	import { invalidate } from '$app/navigation';
+	import { onMount } from 'svelte';
+	export let data: LayoutData;
 
-	$: ({ supabase, session } = data)
+	$: ({ supabase, session } = data);
 
 	onMount(() => {
 		const { data } = supabase.auth.onAuthStateChange((event, _session) => {
 			if (_session?.expires_at !== session?.expires_at) {
-				invalidate('supabase:auth')
+				invalidate('supabase:auth');
 			}
-		})
+		});
 
-		return () => data.subscription.unsubscribe()
-	})
+		return () => data.subscription.unsubscribe();
+	});
 </script>
-<div class="navbar flex top-0 left-0 right-0 z-50 bg-white shadow-lg border-none">
+
+<div
+	class="navbar flex top-0 left-0 right-0 z-50 bg-white shadow-lg border-none"
+>
 	<div class="navbar-start">
 		<div class="dropdown">
 			<label tabindex="0" class="btn btn-ghost btn-circle">
@@ -40,8 +43,8 @@
 				tabindex="0"
 				class="menu menu-compact dropdown-content mt-5 p-2 shadow-lg bg-base-100 rounded-box w-52"
 			>
-                <li><a href="/user">Profile 👤</a></li>
-                <li><a href="/bookings">Bookings 🔍</a></li>
+				<li><a href="/user">Profile 👤</a></li>
+				<li><a href="/bookings">Bookings 🔍</a></li>
 				<li><a href="/suppliers">Suppliers 🏭</a></li>
 			</ul>
 		</div>

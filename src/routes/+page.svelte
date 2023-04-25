@@ -10,12 +10,12 @@
 	<div class="card w-96 bg-base-100 shadow-xl">
 		<div class="card-body">
 			<h2 class="card-title">Sign in</h2>
-				<Auth
-					supabaseClient={data.supabase}
-					view="magic_link"
-					redirectTo={`${data.url}/logging-in?redirect=/`}
-					showLinks={false}
-				/>
+			<Auth
+				supabaseClient={data.supabase}
+				view="magic_link"
+				redirectTo={`${data.url}/logging-in?redirect=/`}
+				showLinks={false}
+			/>
 		</div>
 	</div>
 </div>

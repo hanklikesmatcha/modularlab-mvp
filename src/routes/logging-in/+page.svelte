@@ -16,6 +16,4 @@
 	}
 </script>
 
-<section>
-	Loading
-</section>
+<section>Loading</section>
