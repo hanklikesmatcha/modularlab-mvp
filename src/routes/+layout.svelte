@@ -48,8 +48,8 @@
 				<li><a href="/suppliers">Suppliers 🏭</a></li>
 				<li>
 					<a
-						href="mailto:hi@modularlab.net, szuhan.eng@gmail.com&subject=Feedback for ModularLab"
-						target="_blank">Contract Us</a
+						href="mailto:hi@modularlab.net?cc=szuhan.eng@gmail.com&subject=Feedback%20for%20ModularLab"
+						target="_blank">Contact Us</a
 					>
 				</li>
 			</ul>
