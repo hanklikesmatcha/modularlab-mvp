@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Auth } from '@supabase/auth-ui-svelte';
 	import type { PageData } from './$types';
-	import { ThemeSupa } from '@supabase/auth-ui-shared';
+	import { ThemeSupa } from '@supabase/auth-ui-shared'
 	export let data: PageData;
 </script>
 
@@ -12,7 +12,7 @@
 			<h2 class="card-title">Sign in</h2>
 			<Auth
 				supabaseClient={data.supabase}
-				appearance={{ theme: ThemeSupa }}
+				appearance={{ theme: ThemeSupa } }
 				view="magic_link"
 				redirectTo={`${data.url}/logging-in?redirect=/`}
 				showLinks={false}
