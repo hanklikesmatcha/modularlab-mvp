@@ -2,7 +2,6 @@
 	import { Auth } from '@supabase/auth-ui-svelte';
 	import type { PageData } from './$types';
 	import { ThemeSupa } from '@supabase/auth-ui-shared';
-
 	export let data: PageData;
 </script>
 

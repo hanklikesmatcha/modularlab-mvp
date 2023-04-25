@@ -17,7 +17,7 @@
 </div>
 <div class="grid grid-cols-2 gap-4 justify-between">
 	{#if bookings.length === 0}
-		<a class="link link-secondary text-center"
+		<a href="/suppliers" class="link link-secondary text-center"
 			>No bookings. Let's make a booking</a
 		>
 	{:else}
