@@ -46,6 +46,12 @@
 				<li><a href="/user">Profile 👤</a></li>
 				<li><a href="/bookings">Bookings 🔍</a></li>
 				<li><a href="/suppliers">Suppliers 🏭</a></li>
+				<li>
+					<a
+						href="mailto:hi@modularlab.net, szuhan.eng@gmail.com&subject=Feedback for ModularLab"
+						target="_blank">Contract Us</a
+					>
+				</li>
 			</ul>
 		</div>
 	</div>
