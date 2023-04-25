@@ -34,7 +34,7 @@ export const actions = {
 			website,
 			avatar_url: avatarUrl,
 			email: session?.user.email,
-			updated_at: new Date(),
+			updated_at: new Date()
 		});
 
 		if (supaBaseError) {
