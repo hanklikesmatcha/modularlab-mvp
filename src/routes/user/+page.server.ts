@@ -33,7 +33,8 @@ export const actions = {
 			username,
 			website,
 			avatar_url: avatarUrl,
-			updated_at: new Date()
+			email: session?.user.email,
+			updated_at: new Date(),
 		});
 
 		if (supaBaseError) {
