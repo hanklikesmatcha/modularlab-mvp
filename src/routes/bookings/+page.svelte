@@ -22,7 +22,7 @@
 		>
 	{:else}
 		{#each bookings as { id, created_at, suppliers }, i}
-			<div class="card w-96 bg-base-100 shadow-xl m-auto">
+			<div class="card w-full sm:w-96 bg-base-100 shadow-xl m-auto">
 				<figure class="px-10 pt-10">
 					<img src="/images/logo.png" alt="Shoes" class="rounded-xl" />
 				</figure>

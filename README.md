@@ -1,4 +1,4 @@
-## Introduction 
+## Introduction
 
 Hi all! This is a project designed to help hardware engineers find manufacturers to build their products. The project is published on GitHub, making it freely accessible to anyone who wants to use or contribute to it.
 
@@ -7,18 +7,21 @@ In addition to the project itself, the project also includes tools and resources
 ## Installation
 
 1. Download the project to local
+
 ```
 $ git clone git@github.com:hanklikesmatcha/modularlab-mvp.git
 $ cd modularlab-mvp
 ```
 
 2. Insert ENVIRONMENT_VARIABLES
+
 ```
 $ touch .env
 $ vim .env // edit the .env file for inserting variables
 ```
 
 3. Prepare those keys for the project
+
 ```
 # Created by Vercel CLI
 VERCEL="1"
@@ -31,19 +34,22 @@ PRIVATE_SENDINBLUE_API_KEY=
 ```
 
 4. Install packages
+
 ```
 $ npm install
 ```
 
 5. Run the project
+
 ```
 $ npm run dev
 ```
 
 ## Usage
-* `/user` to see the user info
-*  `/bookings` to check all the submitted bookings
-* `/suppliers` to see all the listed manufacturers
+
+- `/user` to see the user info
+- `/bookings` to check all the submitted bookings
+- `/suppliers` to see all the listed manufacturers
 
 ## Contributing
 

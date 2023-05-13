@@ -46,24 +46,24 @@
 					<ul
 						class="steps steps-vertical w-full flex flex-col items-center"
 					>
-						<li class="step step-secondary">
-							Update your draft
-							<ul class="flex flex-col">
-								<div class="ml-10">
-									<input
-										type="file"
-										name="file"
-										class="file-input file-input-bordered file-input-xs"
-										required
-									/>
-								</div>
-								<li class="step step-secondary">Evaluation</li>
-								<li class="step">Result</li>
-								<li class="step">Confirmation</li>
-								<li class="step">Manufacturing</li>
-								<li class="step">Shipment</li>
-							</ul>
-						</li>
+						<div class="ml-10">
+							<label class="label">
+								<span class="label-text">Update load your file</span>
+							</label>
+							<input
+								type="file"
+								name="file"
+								class="file-input file-input-bordered file-input-xs"
+								required
+							/>
+						</div>
+						<ul class="flex flex-col">
+							<li class="step step-secondary">Evaluation</li>
+							<li class="step">Result</li>
+							<li class="step">Confirmation</li>
+							<li class="step">Manufacturing</li>
+							<li class="step">Shipment</li>
+						</ul>
 					</ul>
 					<div class="flex flex-col">
 						<label for="notes">Notes for the manufacturer:</label>
