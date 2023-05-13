@@ -30,11 +30,11 @@
 		<div
 			class="card card-side bg-base-100 shadow-xl max-w-screen-md w-screen"
 		>
-			<figure class="m-6 w-60 rounded-lg">
-				<img src={supplier.thumbnail} alt="supplier" />
-			</figure>
-			<div class="card-body">
+			<div class="card-body flex flex-col items-center justify-center">
 				<h2 class="card-title">{supplier.name}</h2>
+				<figure class="m-6 w-60 rounded-lg">
+					<img src={supplier.thumbnail} alt="supplier" />
+				</figure>
 				<p class="card">The process of the order</p>
 				<form
 					action="?/upload"
@@ -43,23 +43,27 @@
 					enctype="multipart/form-data"
 					class="form-control w-full"
 				>
-					<ul class="steps steps-vertical">
+					<ul
+						class="steps steps-vertical w-full flex flex-col items-center"
+					>
 						<li class="step step-secondary">
 							Update your draft
-							<ul>
-								<input
-									type="file"
-									name="file"
-									class="mx-12 file-input file-input-bordered file-input-xs"
-									required
-								/>
+							<ul class="flex flex-col">
+								<div class="ml-10">
+									<input
+										type="file"
+										name="file"
+										class="file-input file-input-bordered file-input-xs"
+										required
+									/>
+								</div>
+								<li class="step step-secondary">Evaluation</li>
+								<li class="step">Result</li>
+								<li class="step">Confirmation</li>
+								<li class="step">Manufacturing</li>
+								<li class="step">Shipment</li>
 							</ul>
 						</li>
-						<li class="step step-secondary">Evaluation</li>
-						<li class="step">Result</li>
-						<li class="step">Confirmation</li>
-						<li class="step">Manufacturing</li>
-						<li class="step">Shipment</li>
 					</ul>
 					<div class="flex flex-col">
 						<label for="notes">Notes for the manufacturer:</label>

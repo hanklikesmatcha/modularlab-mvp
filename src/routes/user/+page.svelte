@@ -14,7 +14,7 @@
 	let fullName: string | null = profile?.full_name || '';
 	let username: string | null = profile?.username || '';
 	let website: string | null = profile?.website || '';
-	let avatarUrl: string | null = profile?.avatar_url ||'';
+	let avatarUrl: string | null = profile?.avatar_url || '';
 
 	function handleSubmit() {
 		loading = true;
@@ -36,6 +36,12 @@
 	<div class="card w-96 bg-base-100 shadow-xl">
 		<div class="card-body">
 			<h2 class="card-title">Personal Details</h2>
+			{#if !fullName || !username}
+				<p>
+					The account will successfully created when the info is registered
+				</p>
+			{/if}
+
 			<form
 				class="form-widget w-full max-w-sm m-auto"
 				method="post"

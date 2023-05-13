@@ -68,7 +68,6 @@ export const actions = {
 					file_url: filePath,
 					notes: notes
 				});
-
 				await supabase.storage
 					.from('files-for-bookings')
 					.upload(filePath, file);
@@ -98,7 +97,10 @@ export const actions = {
 					}
 				});
 			} catch (err) {
-				throw error(500, { message: 'Error uploading file' });
+				console.log(err!.toString());
+				throw error(500, {
+					message: `Error uploading file - ${err!.toString()}`
+				});
 			}
 		} else {
 			throw error(404, {
