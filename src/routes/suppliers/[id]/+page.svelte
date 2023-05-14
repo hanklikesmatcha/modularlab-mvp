@@ -17,11 +17,13 @@
 	}
 </script>
 
-<div class="grid grid-col-3 gap-4 tems-center">
-	<h1 class="col-start-1 col-end-4 text-3xl font-bold text-center m-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+	<h1
+		class="md:col-start-1 md:col-end-4 text-3xl font-bold text-center m-8"
+	>
 		Suppliers - {supplier?.name}
 	</h1>
-	<div class="col-start-2 col-end3">
+	<div class="md:col-start-2 md:col-end-3">
 		<Breadcrumb path={$page.url.href} />
 	</div>
 </div>
